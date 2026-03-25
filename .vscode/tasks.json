@@ -1,0 +1,83 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build-debug",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "TaskSchedulerPersist.csproj",
+                "/p:Configuration=Debug",
+                "/p:Platform=AnyCPU",
+                "/t:Build"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build-release",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "TaskSchedulerPersist.csproj",
+                "/p:Configuration=Release",
+                "/p:Platform=AnyCPU",
+                "/t:Build"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build-debug-x64",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "TaskSchedulerPersist.csproj",
+                "/p:Configuration=Debug",
+                "/p:Platform=x64",
+                "/t:Build"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build-release-x64",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "TaskSchedulerPersist.csproj",
+                "/p:Configuration=Release",
+                "/p:Platform=x64",
+                "/t:Build"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "TaskSchedulerPersist.csproj",
+                "/t:Clean"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "rebuild",
+            "type": "shell",
+            "command": "msbuild",
+            "args": [
+                "TaskSchedulerPersist.csproj",
+                "/p:Configuration=Debug",
+                "/t:Rebuild"
+            ],
+            "group": "build",
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
