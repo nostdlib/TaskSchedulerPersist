@@ -1,5 +1,3 @@
-using System;
-using System.Management;
 using Microsoft.Win32;
 
 public static class RegistryHelper
@@ -12,28 +10,5 @@ public static class RegistryHelper
         {
             key.SetValue(name, command);
         }
-    }
-
-    public static string GetSerialNumber()
-    {
-        Guid biosId = Guid.Empty;
-
-        try
-        {
-            ManagementObjectSearcher searcher = new ManagementObjectSearcher("SELECT UUID FROM Win32_ComputerSystemProduct");
-
-            foreach (ManagementObject obj in searcher.Get())
-            {
-                if (obj["UUID"] != null)
-                {
-                    var uuid = obj["UUID"].ToString().Trim();
-                    biosId = new Guid(uuid);
-                    break;
-                }
-            }
-        }
-        catch { }
-
-        return biosId.ToString("N");
     }
 }
